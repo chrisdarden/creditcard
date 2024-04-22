@@ -1,32 +1,19 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { ReactiveFormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
-
-
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-card-form',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './card-form.component.html',
-  styleUrl: './card-form.component.css'
+  styleUrls: ['./card-form.component.css']
 })
-export class CardFormComponent {
-
+export class CardFormComponent implements OnInit {
   cardForm = new FormGroup({
-    name: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3)
-    ]),
-    cardNumber: new FormControl('', [Validators.required]),
-    expiration: new FormControl('', [Validators.required]),
-    cvc: new FormControl('', [Validators.required])
+    name: new FormControl('', [Validators.required, Validators.minLength(3)])
   });
 
-  onSubmit() {
-    console.warn(this.cardForm.value);
+  constructor() {
+    console.log(this.cardForm.get('name'));
   }
 
-
+  ngOnInit() {}
 }
