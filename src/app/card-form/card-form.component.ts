@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
@@ -15,10 +15,13 @@ import { CommonModule } from "@angular/common";
 export class CardFormComponent {
 
   cardForm = new FormGroup({
-    name: new FormControl(''),
-    cardNumber: new FormControl(''),
-    expiration: new FormControl(''),
-    cvc: new FormControl('')
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3)
+    ]),
+    cardNumber: new FormControl('', [Validators.required]),
+    expiration: new FormControl('', [Validators.required]),
+    cvc: new FormControl('', [Validators.required])
   });
 
   onSubmit() {

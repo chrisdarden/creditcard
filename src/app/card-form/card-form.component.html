@@ -1,7 +1,14 @@
 <form [formGroup]="cardForm">
   <input formControlName="name" aria-label="name" />
+  <input formControlName="cardNumber" aria-label="cardNumber" />
+  <input formControlName="expiration" aria-label="expiration" />
+  <input formControlName="cvc" aria-label="cvc" />
 
 </form>
 
 <div>Form Contents: {{ cardForm.value | json }}</div>
 <div>Form is valid: {{ cardForm.valid}}</div>
+<div>Errors around name: {{ cardForm.controls.name.errors | json}}</div>
+<div>Errors around cardNumber: {{ cardForm.controls.cardNumber.errors | json}}</div>
+<div>Errors around expiration: {{ cardForm.controls.expiration.errors | json}}</div>
+<div>Errors around cvc: {{ cardForm.controls.cvc.errors | json}}</div>
