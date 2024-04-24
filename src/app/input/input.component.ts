@@ -10,7 +10,10 @@ export class InputComponent implements OnInit {
   @Input() control: UntypedFormControl;
   @Input() label: string;
 
-  constructor() {}
+  constructor() {
+    this.control = new UntypedFormControl('');
+    this.label = '';
+  }
 
   ngOnInit() {
     console.log('Input ngOnInit placeholder');
