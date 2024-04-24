@@ -43,4 +43,7 @@ export class CardFormComponent implements OnInit {
     console.log("form submitted");
   }
 
+ngOnInit() {
+  console.log('card-form ngOnInit placeholder');
+}
 }

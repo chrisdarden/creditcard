@@ -12,6 +12,9 @@ export class InputComponent implements OnInit {
 
   constructor() {}
 
+  ngOnInit() {
+    console.log('Input ngOnInit placeholder');
+  }
 
   showErrors() {
     const { dirty, touched, errors } = this.control;
