@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-card-form',
@@ -7,26 +7,26 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./card-form.component.css']
 })
 export class CardFormComponent implements OnInit {
-  cardForm = new FormGroup({
-    name: new FormControl('', [
+  cardForm = new UntypedFormGroup({
+    name: new UntypedFormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern(/^[a-zA-Z\s]*$/)
     ]),
-    cardNumber: new FormControl('', [
+    cardNumber: new UntypedFormControl('', [
       Validators.required,
       Validators.minLength(16),
       Validators.maxLength(16),
       Validators.pattern(/^\d+$/)
     ]
     ),
-    expiration: new FormControl('', [
+    expiration: new UntypedFormControl('', [
       Validators.required,
       Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)
     ]
     ),
-    securityCode: new FormControl('', [
+    securityCode: new UntypedFormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(3),
