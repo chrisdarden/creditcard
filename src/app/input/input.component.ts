@@ -16,7 +16,8 @@ export class InputComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('Input ngOnInit placeholder');
+  // TODO: Implement ngOnInit logic
+  return
   }
 
   showErrors() {

@@ -37,7 +37,11 @@ export class CardFormComponent implements OnInit {
   });
 
   constructor() {
-    console.log(this.cardForm.get('name'));
+    // console.log(this.cardForm.get('name'));
+  }
+
+  onResetClick() {
+    this.cardForm.reset();
   }
 
   onSubmit() {
@@ -45,6 +49,8 @@ export class CardFormComponent implements OnInit {
   }
 
 ngOnInit() {
-  console.log('card-form ngOnInit placeholder');
+  // console.log('card-form ngOnInit placeholder');
+  // TODO: Implement ngOnInit logic
+  return;
 }
 }
